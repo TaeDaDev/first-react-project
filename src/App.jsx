@@ -32,6 +32,7 @@ function App() {
       {weather && <WeatherCard data={weather} toggle={toggle} />}
       {weather && <ToggleTemp toggle={toggle} setToggle={setToggle} />}
       {forecast && <Forecast data={forecast} />}
+      <Analytics />
     </>
   );
 }
