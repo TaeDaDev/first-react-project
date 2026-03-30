@@ -10,11 +10,13 @@ export default function SearchBar(props) {
 
   return (
     <>
-      <h1>Enter City Name</h1>
+    <h1>Welcome to the Weather App!</h1>
+      <h2>Enter City Name</h2>
       <div>
         <input
+        id="search-input"
           type="text"
-          placeholder="Clayton, NC"
+          placeholder="Clayton"
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />

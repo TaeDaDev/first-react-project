@@ -1,12 +1,13 @@
 import React from "react";
 import SearchBar from "./components/SearchBar";
-//import ToggleTemp from "./components/ToggleTemp";
+import ToggleTemp from "./components/ToggleTemp";
 //import Forecast from "./components/Forecast";
 //import Loader from "./components/Loader";
 import WeatherCard from "./components/WeatherCard";
 
-function App(props) {
+function App() {
   const [weather, setWeather] = React.useState(null);
+  const [toggle, setToggle] = React.useState(false);
 
   function handleSearch(city) {
     fetch(
@@ -15,11 +16,13 @@ function App(props) {
       .then((res) => res.json())
       .then((data) => setWeather(data))
       .catch((err) => console.log(err));
-      console.log(weather)  }
+    console.log(weather);
+  }
   return (
     <>
       <SearchBar handleSearch={handleSearch} />
-      {weather && <WeatherCard data={weather} />}
+      {weather && <WeatherCard data={weather} toggle={toggle} />}
+      {weather && <ToggleTemp toggle={toggle} setToggle={setToggle} />}
     </>
   );
 }
