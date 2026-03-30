@@ -5,7 +5,7 @@ import Forecast from "./components/Forecast";
 import { Analytics } from "@vercel/analytics/react";
 import Loader from "./components/Loader";
 import WeatherCard from "./components/WeatherCard";
-import "./App.css";
+
 
 function App() {
   const [weather, setWeather] = React.useState(null);
@@ -29,7 +29,7 @@ function App() {
       })
 
       .catch((err) => console.log(err))
-      .finally(() => setTimeout(() => setLoading(false), 1000));
+      .finally(() => setLoading(false));
 
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=f3f4077a9f828dce3c21c9514c8fb978`,
