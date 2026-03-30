@@ -5,6 +5,7 @@ import Forecast from "./components/Forecast";
 import { Analytics } from "@vercel/analytics/react";
 import Loader from "./components/Loader";
 import WeatherCard from "./components/WeatherCard";
+import "./App.css";
 
 
 function App() {
