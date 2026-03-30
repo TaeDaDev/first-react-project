@@ -3,13 +3,14 @@ import SearchBar from "./components/SearchBar";
 import ToggleTemp from "./components/ToggleTemp";
 import Forecast from "./components/Forecast";
 import { Analytics } from "@vercel/analytics/react";
-//import Loader from "./components/Loader";
+import Loader from "./components/Loader";
 import WeatherCard from "./components/WeatherCard";
 
 function App() {
   const [weather, setWeather] = React.useState(null);
   const [toggle, setToggle] = React.useState(false);
   const [forecast, setForecast] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
 
   function handleSearch(city) {
     fetch(
@@ -17,6 +18,7 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => setWeather(data))
+      .then(() => localStorage.setItem("city", city))
       .catch((err) => console.log(err));
     
     fetch(
@@ -26,6 +28,13 @@ function App() {
       .then((data) => setForecast(data))
       .catch((err) => console.log(err));
   }
+
+  React.useEffect(() => {
+    const city = localStorage.getItem("city");
+    if (city) {
+      handleSearch(city);
+    }
+  }, []);
   return (
     <>
       <SearchBar handleSearch={handleSearch} />
