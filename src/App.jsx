@@ -28,7 +28,7 @@ function App() {
       })
 
       .catch((err) => console.log(err))
-      .finally(() => setLoading(false));
+      .finally(() => setTimeout(() => setLoading(false), 3000));
 
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=f3f4077a9f828dce3c21c9514c8fb978`,
