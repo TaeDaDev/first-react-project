@@ -1,11 +1,18 @@
 export default function Forecast(props) {
   const { list } = props.data;
+  if (!list) {
+    return <p>No forecast data available.</p>;
+  }
   return list
     .filter((item, index) => index % 8 === 0)
     .map((item, index) => (
       <div key={index}>
+        {props.toggle ? (
+          <p>{Math.round((item.main.temp * 9) / 5 - 459.67)}°F</p>
+        ) : (
+          <p>{Math.round(item.main.temp - 273.15)}°C</p>
+        )}
         <p>{item.name}</p>
-        <p>{Math.round(item.main.temp - 273.15)}°C</p>
         <p>{item.dt_txt}</p>
         <p>Humidity: {item.main.humidity}%</p>
         <p>Wind Speed: {item.wind.speed} m/s</p>

@@ -1,5 +1,8 @@
 export default function WeatherCard(props) {
   const { main, wind, weather } = props.data;
+  if (!main || !wind || !weather) {
+    return <p>Please enter a valid city name.</p>;
+  }
   return (
     <div>
       <h2>{props.data.name}</h2>
