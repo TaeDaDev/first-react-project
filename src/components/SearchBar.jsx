@@ -19,6 +19,7 @@ export default function SearchBar(props) {
           placeholder="Clayton"
           value={city}
           onChange={(e) => setCity(e.target.value)}
+          onKeyDown={(e) => { if(e.key === "Enter") handleSubmit() }}
         />
         <button onClick={handleSubmit}>Search</button>
       </div>
