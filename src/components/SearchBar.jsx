@@ -11,6 +11,8 @@ export default function SearchBar(props) {
   return (
     <>
     <h1>Welcome to the Weather App!</h1>
+    <br />
+    <h3>Styling will be coming soon!`</h3>
       <h2>Enter City Name</h2>
       <div>
         <input

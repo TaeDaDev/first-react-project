@@ -2,6 +2,7 @@ import React from "react";
 import SearchBar from "./components/SearchBar";
 import ToggleTemp from "./components/ToggleTemp";
 import Forecast from "./components/Forecast";
+import { Analytics } from "@vercel/analytics/react";
 //import Loader from "./components/Loader";
 import WeatherCard from "./components/WeatherCard";
 
