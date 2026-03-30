@@ -13,7 +13,7 @@ export default function Forecast(props) {
           <p>{Math.round(item.main.temp - 273.15)}°C</p>
         )}
         <p>{item.name}</p>
-        <p>{new Date(item.dt_txt).toLocaleDateString()}</p>
+        <p>{new Date(item.dt_txt).toLocaleDateString("en-US", { weekday: 'long', month: 'long', day: 'numeric' }  )}</p>
         <p>Humidity: {item.main.humidity}%</p>
         <p>Wind Speed: {item.wind.speed} m/s</p>
         <p>
