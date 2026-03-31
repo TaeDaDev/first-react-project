@@ -1,7 +1,7 @@
 export default function Forecast(props) {
   const { list } = props.data;
   if (!list) {
-    return <p>No forecast data available. Please enter a valid city name.</p>;
+    return <p>No forecast data available. Please Enter a Valid City Name.</p>;
   }
   return list
     .filter((item, index) => index % 8 === 0)
