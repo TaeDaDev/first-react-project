@@ -21,7 +21,7 @@ function App() {
     }
   }, []);
   return (
-    <div className={`min-h-screen px-4 py-6 sm:py-10 flex flex-col items-center gap-4 sm:gap-6 overflow-x-hidden transition-colors duration-300 ${darkMode ? 'bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950' : 'bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600'}`}>
+    <div className={`min-h-screen px-4 py-6 sm:py-10 flex flex-col items-center gap-4 sm:gap-6 overflow-x-hidden transition-colors duration-300 ${darkMode ? 'bg-linear-to-br from-slate-950 via-slate-900 to-indigo-950' : 'bg-linear-to-br from-sky-400 via-blue-500 to-indigo-600'}`}>
       <SearchBar handleSearch={(city) => handleSearch(city, setWeather, setForecast, setLoading)} />
       {weather && <WeatherCard data={weather} toggle={toggle} />}
       {weather && <ToggleTemp toggle={toggle} setToggle={setToggle} darkMode={darkMode} setDarkMode={setDarkMode} />}
