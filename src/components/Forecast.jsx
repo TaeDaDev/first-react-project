@@ -11,7 +11,7 @@ export default function Forecast(props) {
         {days.map((item, index) => (
           <div
             key={index}
-            className="min-w-[130px] bg-white/15 backdrop-blur-md rounded-2xl p-4 text-white border border-white/20 text-center flex-shrink-0"
+            className="min-w-32.5 bg-white/15 backdrop-blur-md rounded-2xl p-4 text-white border border-white/20 text-center shrink-0"
           >
             <p className="text-xs text-white/60 mb-1">
               {new Date(item.dt_txt).toLocaleDateString("en-US", {
